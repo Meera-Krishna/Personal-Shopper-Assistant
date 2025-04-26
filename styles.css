@@ -1,0 +1,252 @@
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #FF69B4;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4aa6;
+}
+
+/* Smooth transitions for dark mode */
+.dark {
+  color-scheme: dark;
+}
+
+/* Chat bubble animations */
+.chat-bubble {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Input focus effects */
+#userInput:focus {
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+}
+
+/* Send button hover effect */
+#sendMessage:hover {
+  transform: scale(1.05);
+}
+
+/* Welcome screen animation */
+#welcomeScreen {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  animation: fadeInScale 0.5s ease;
+}
+
+.dark #welcomeScreen {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+}
+
+#welcomeScreen h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dark #welcomeScreen h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+#welcomeScreen p {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+}
+
+#welcomeScreen p:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+#welcomeScreen p:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+#welcomeScreen button {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.6s;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode transition */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Chat message formatting */
+.chat-bubble-bot h2 {
+  margin: 1em 0 0.5em;
+  font-size: 1.25em;
+}
+
+.chat-bubble-bot h3 {
+  margin: 0.75em 0 0.5em;
+  font-size: 1.1em;
+}
+
+.chat-bubble-bot ul {
+  margin: 0.5em 0;
+  padding-left: 1.5em;
+}
+
+.chat-bubble-bot li {
+  margin: 0.25em 0;
+  line-height: 1.4;
+}
+
+.chat-bubble-bot b {
+  color: #E91E63;
+  font-weight: 600;
+}
+
+.chat-bubble-bot i {
+  color: #666;
+}
+
+/* Ensure proper spacing between sections */
+.chat-bubble-bot br {
+  margin: 0.5em 0;
+  display: block;
+  content: "";
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+  .chat-bubble-bot h2 {
+    font-size: 1.1em;
+  }
+
+  .chat-bubble-bot h3 {
+    font-size: 1em;
+  }
+
+  .chat-bubble-bot ul {
+    padding-left: 1em;
+  }
+}
+
+/* Footer styles */
+footer {
+  z-index: 10;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Ensure chat interface doesn't overlap with footer */
+#chatInterface {
+  padding-bottom: 4rem;
+}
+
+/* Mobile responsiveness for footer */
+@media (max-width: 768px) {
+  footer {
+    padding: 0.5rem 0;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+  }
+}
+
+/* Developer info animation in welcome screen */
+#welcomeScreen .border-t {
+  opacity: 0;
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* Custom styles for the chatbot */
+#chatbot-container {
+  transition: all 0.3s ease;
+}
+
+#chatbot-button {
+  transition: transform 0.3s ease;
+}
+
+#chatbot-button:hover {
+  transform: scale(1.1);
+}
+
+#chat-messages {
+  scrollbar-width: thin;
+  scrollbar-color: #FF69B4 #f3f4f6;
+}
+
+#chat-messages::-webkit-scrollbar {
+  width: 6px;
+}
+
+#chat-messages::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 3px;
+}
+
+#chat-messages::-webkit-scrollbar-thumb {
+  background-color: #FF69B4;
+  border-radius: 3px;
+}
+
+/* Dark mode scrollbar styles */
+.dark #chat-messages::-webkit-scrollbar-track {
+  background: #374151;
+}
+
+.dark #chat-messages::-webkit-scrollbar-thumb {
+  background-color: #F8BBD0;
+}
+
+/* Message animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#chat-messages div {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Input focus styles */
+#chat-input:focus {
+  box-shadow: 0 0 0 2px rgba(255, 105, 180, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  #chatbot-window {
+    width: 90%;
+    right: 5%;
+  }
+}

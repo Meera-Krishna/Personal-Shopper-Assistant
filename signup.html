@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - StyleGenie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF69B4',
+            secondary: '#F8BBD0',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold text-primary">StyleGenie</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a>
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a>
+          <a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a>
+          <button onclick="window.location.href='index.html'" id="darkModeToggle"
+            class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+            <svg class="w-6 h-6 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg class="w-6 h-6 hidden dark:block text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sign Up Form -->
+  <div class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8">
+      <div>
+        <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900 dark:text-white">
+          Create your account
+        </h2>
+        <p class="mt-2 text-center text-sm text-gray-600 dark:text-gray-400">
+          Or
+          <a href="login.html" class="font-medium text-primary hover:text-opacity-80">
+            sign in to your existing account
+          </a>
+        </p>
+      </div>
+      <form class="mt-8 space-y-6" action="#" method="POST">
+        <div class="rounded-md shadow-sm -space-y-px">
+          <div>
+            <label for="full-name" class="sr-only">Full Name</label>
+            <input id="full-name" name="full-name" type="text" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-t-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm dark:bg-gray-700"
+              placeholder="Full Name">
+          </div>
+          <div>
+            <label for="email-address" class="sr-only">Email address</label>
+            <input id="email-address" name="email" type="email" autocomplete="email" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm dark:bg-gray-700"
+              placeholder="Email address">
+          </div>
+          <div>
+            <label for="password" class="sr-only">Password</label>
+            <input id="password" name="password" type="password" autocomplete="new-password" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm dark:bg-gray-700"
+              placeholder="Password">
+          </div>
+          <div>
+            <label for="confirm-password" class="sr-only">Confirm Password</label>
+            <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 dark:border-gray-600 placeholder-gray-500 dark:placeholder-gray-400 text-gray-900 dark:text-white rounded-b-md focus:outline-none focus:ring-primary focus:border-primary focus:z-10 sm:text-sm dark:bg-gray-700"
+              placeholder="Confirm Password">
+          </div>
+        </div>
+
+        <div class="flex items-center">
+          <input id="terms" name="terms" type="checkbox" required
+            class="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded">
+          <label for="terms" class="ml-2 block text-sm text-gray-900 dark:text-gray-300">
+            I agree to the <a href="#" class="text-primary hover:text-opacity-80">Terms of Service</a> and <a href="#"
+              class="text-primary hover:text-opacity-80">Privacy Policy</a>
+          </label>
+        </div>
+
+        <div>
+          <button onclick="window.location.href='index.html'" type="submit"
+            class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+            Create Account
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">StyleGenie</h3>
+          <p class="text-gray-600 dark:text-gray-300">Your personal shopping assistant for the perfect style.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a></li>
+            <li><a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a></li>
+            <li><a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-600 dark:text-gray-300">Email: support@stylegenie.com</li>
+            <li class="text-gray-600 dark:text-gray-300">Phone: +91 1234567890</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Developer</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Developed by <span class="text-primary font-semibold">Meera Krishna</span>
+            <br>
+            Reg No: <span class="text-primary font-semibold">12318757</span>
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-600 dark:text-gray-300">© 2024 StyleGenie. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

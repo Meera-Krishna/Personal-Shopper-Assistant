@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - StyleGenie</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF69B4',
+            secondary: '#F8BBD0',
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold text-primary">StyleGenie</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a>
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a>
+          <a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a>
+          <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+            <svg class="w-6 h-6 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg class="w-6 h-6 hidden dark:block text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">About StyleGenie</h1>
+      <p class="text-xl text-gray-600 dark:text-gray-300">Your Personal Shopping Assistant</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">Our Mission</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          At StyleGenie, we believe that everyone deserves to look and feel their best. Our mission is to make personal
+          styling accessible to everyone by leveraging the power of artificial intelligence. We help you discover your
+          unique style and find the perfect outfits that match your personality and preferences.
+        </p>
+      </div>
+      <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+        <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-4">What We Do</h2>
+        <p class="text-gray-600 dark:text-gray-300">
+          StyleGenie uses advanced AI algorithms to analyze your style preferences, body type, and fashion trends to
+          provide personalized shopping recommendations. Whether you're looking for casual wear, formal attire, or
+          special occasion outfits, we've got you covered.
+        </p>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg mb-16">
+      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">Our Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Personalized Recommendations</h3>
+          <p class="text-gray-600 dark:text-gray-300">Get outfit suggestions tailored to your style and preferences</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">24/7 Availability</h3>
+          <p class="text-gray-600 dark:text-gray-300">Access your personal stylist anytime, anywhere</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mx-auto mb-4">
+            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z">
+              </path>
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Trend Analysis</h3>
+          <p class="text-gray-600 dark:text-gray-300">Stay updated with the latest fashion trends</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
+      <h2 class="text-2xl font-semibold text-gray-900 dark:text-white mb-6 text-center">Meet the Developer</h2>
+      <div class="flex flex-col items-center">
+        <div class="w-32 h-32 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+          <svg class="w-16 h-16 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 dark:text-white">Meera Krishna</h3>
+        <p class="text-gray-600 dark:text-gray-300">Registration Number: 12318757</p>
+        <p class="text-gray-600 dark:text-gray-300 mt-4 text-center max-w-2xl">
+          A passionate developer dedicated to creating innovative solutions that make a difference in people's lives.
+          With a strong background in web development and artificial intelligence, I created StyleGenie to help people
+          discover their unique style and feel confident in their appearance.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">StyleGenie</h3>
+          <p class="text-gray-600 dark:text-gray-300">Your personal shopping assistant for the perfect style.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a></li>
+            <li><a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a></li>
+            <li><a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-600 dark:text-gray-300">Email: support@stylegenie.com</li>
+            <li class="text-gray-600 dark:text-gray-300">Phone: +91 1234567890</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Developer</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Developed by <span class="text-primary font-semibold">Meera Krishna</span>
+            <br>
+            Reg No: <span class="text-primary font-semibold">12318757</span>
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-600 dark:text-gray-300">© 2024 StyleGenie. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StyleGenie - Your Personal Shopping Assistant</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom Tailwind Configuration -->
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            primary: '#FF69B4',
+            secondary: '#F8BBD0',
+          },
+          animation: {
+            'bounce-slow': 'bounce 3s linear infinite',
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Custom styles -->
+  <style type="text/tailwind">
+    @layer utilities {
+            .chat-bubble {
+                @apply rounded-2xl p-4 max-w-[80%] shadow-md;
+            }
+            .chat-bubble-user {
+                @apply bg-primary text-white ml-auto;
+            }
+            .chat-bubble-bot {
+                @apply bg-gray-100 mr-auto;
+            }
+        }
+    </style>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="bg-gray-50 dark:bg-gray-900">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-800 shadow-lg fixed w-full z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between h-16">
+        <div class="flex items-center">
+          <a href="index.html" class="text-2xl font-bold text-primary">StyleGenie</a>
+        </div>
+        <div class="flex items-center space-x-4">
+          <a href="features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a>
+          <a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a>
+          <a href="login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a>
+          <a href="signup.html" class="bg-primary text-white px-4 py-2 rounded-full hover:bg-opacity-90">Sign Up</a>
+          <button id="darkModeToggle" class="p-2 rounded-full bg-gray-200 dark:bg-gray-700">
+            <svg class="w-6 h-6 dark:hidden" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg class="w-6 h-6 hidden dark:block text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Welcome Screen -->
+  <div id="welcomeScreen" class="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full space-y-8 text-center">
+      <div>
+        <h1 class="text-4xl font-bold text-gray-900 dark:text-white mb-4">Welcome to StyleGenie</h1>
+        <p class="text-xl text-gray-600 dark:text-gray-300">Your Personal Shopping Assistant</p>
+        <p class="mt-4 text-gray-600 dark:text-gray-300">Get personalized outfit recommendations and style advice</p>
+      </div>
+      <button id="startShoppingBtn"
+        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-primary hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
+        Start Shopping
+      </button>
+      <div class="border-t border-gray-200 dark:border-gray-700 pt-8">
+        <p class="text-gray-600 dark:text-gray-300">
+          Developed by <span class="text-primary font-semibold">Meera Krishna</span>
+          <br>
+          Reg No: <span class="text-primary font-semibold">12318757</span>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Features Preview -->
+  <div class="bg-gray-100 dark:bg-gray-800 py-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-12">Key Features</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Personalized Recommendations</h3>
+          <p class="text-gray-600 dark:text-gray-300">Get outfit suggestions tailored to your style, budget, and
+            preferences.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Smart Budgeting</h3>
+          <p class="text-gray-600 dark:text-gray-300">Find the perfect outfits within your budget range.</p>
+        </div>
+        <div class="bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg">
+          <h3 class="text-xl font-semibold mb-4">Style Tracking</h3>
+          <p class="text-gray-600 dark:text-gray-300">Save your favorite outfits and track your style evolution.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chatbot Icon -->
+  <button id="chatbotIcon"
+    class="fixed bottom-4 right-4 bg-primary text-white p-4 rounded-full shadow-lg hover:bg-opacity-90 transition-all duration-300">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+        d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z">
+      </path>
+    </svg>
+  </button>
+
+  <!-- Chat Interface -->
+  <div id="chatInterface"
+    class="hidden fixed bottom-4 right-4 w-80 bg-white dark:bg-gray-800 rounded-lg shadow-xl border border-gray-200 dark:border-gray-700">
+    <div class="flex justify-between items-center p-4 border-b border-gray-200 dark:border-gray-700">
+      <h3 class="text-lg font-semibold text-gray-900 dark:text-white">StyleGenie Assistant</h3>
+      <button id="close-chatbot" class="text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <div id="chatMessages" class="h-80 overflow-y-auto p-4 space-y-4"></div>
+    <div class="p-4 border-t border-gray-200 dark:border-gray-700">
+      <form id="chat-form" class="flex space-x-2">
+        <input type="text" id="userInput"
+          class="flex-1 rounded-lg border border-gray-300 dark:border-gray-600 px-4 py-2 focus:outline-none focus:ring-2 focus:ring-primary dark:bg-gray-700 dark:text-white"
+          placeholder="Type your message...">
+        <button type="submit" id="sendMessage"
+          class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-opacity-90">Send</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-white dark:bg-gray-800 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div>
+          <h3 class="text-lg font-semibold mb-4">StyleGenie</h3>
+          <p class="text-gray-600 dark:text-gray-300">Your personal shopping assistant for the perfect style.</p>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+          <ul class="space-y-2">
+            <li><a href="./features.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Features</a></li>
+            <li><a href="./about.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">About</a></li>
+            <li><a href="./login.html" class="text-gray-600 dark:text-gray-300 hover:text-primary">Login</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Contact</h3>
+          <ul class="space-y-2">
+            <li class="text-gray-600 dark:text-gray-300">Email: support@stylegenie.com</li>
+            <li class="text-gray-600 dark:text-gray-300">Phone: +91 1234567890</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-lg font-semibold mb-4">Developer</h3>
+          <p class="text-gray-600 dark:text-gray-300">
+            Developed by <span class="text-primary font-semibold">Meera Krishna</span>
+            <br>
+            Reg No: <span class="text-primary font-semibold">12318757</span>
+          </p>
+        </div>
+      </div>
+      <div class="border-t border-gray-200 dark:border-gray-700 mt-8 pt-8 text-center">
+        <p class="text-gray-600 dark:text-gray-300">© 2025 StyleGenie. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
